@@ -1,0 +1,77 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    backports (3.6.0)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.8.0)
+    commonjs (0.2.7)
+    execjs (2.2.1)
+    hike (1.2.3)
+    json (1.8.1)
+    kgio (2.9.2)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    libv8 (3.16.14.5)
+    multi_json (1.10.1)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    raindrops (0.13.0)
+    ref (1.0.5)
+    sass (3.4.3)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    slim (2.0.3)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+    sprockets (2.12.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-helpers (1.1.0)
+      sprockets (~> 2.0)
+    temple (0.6.8)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
+    tilt (1.4.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bootstrap-sass
+  coffee-script
+  less
+  sass
+  sinatra
+  sinatra-contrib
+  slim
+  sprockets
+  sprockets-helpers
+  therubyracer
+  uglifier
+  unicorn
