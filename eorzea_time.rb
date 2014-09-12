@@ -4,7 +4,7 @@ class EorzeaTime < Sinatra::Base
   register Sinatra::Sprockets::Helpers
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
-  set :digest_assets, true
+  set :digest_assets, production?
 
   configure do
     %w/stylesheets javascripts images/.each do |dir|
