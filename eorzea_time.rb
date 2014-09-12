@@ -47,10 +47,11 @@ class EorzeaTime < Sinatra::Base
     end
   end
 
-  get '/' do
+  get %r{/(?:(eorzea|earth)-clock)?} do |location|
     @time = Time.now
     @mode = 'analog'
-    slim :index
+    @location = location || :eorzea
+    slim "#{@location}-clock".to_sym
   end
 
   get '/about' do
