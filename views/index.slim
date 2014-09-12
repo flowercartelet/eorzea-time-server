@@ -1,7 +1,9 @@
 .clock class="#{@mode}"
   p.time data-hours="#{hours = @time.hour}" data-minutes="#{minutes = @time.min}" data-seconds="#{seconds = @time.sec}"
     span.hours = hours
-    span | :
+    span
+      | :
     span.minutes = minutes
-    span | :
+    span
+      | :
     span.seconds = seconds
