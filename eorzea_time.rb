@@ -1,6 +1,7 @@
 require 'json'
 
 class EorzeaTime < Sinatra::Base
+  register Sinatra::Sprockets::Helpers
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
@@ -9,6 +10,9 @@ class EorzeaTime < Sinatra::Base
     %w/stylesheets javascripts images/.each do |dir|
       sprockets.append_path File.join root, 'assets', dir
     end
+    sprockets.append_path Bootstrap.stylesheets_path
+    sprockets.append_path Bootstrap.fonts_path
+    sprockets.append_path Bootstrap.javascripts_path
     if Dir.exists? bower_directory = File.join(root, 'bower_components')
       Dir.entries(bower_directory).each do |basename|
         next if basename.start_with? '.'
@@ -24,14 +28,8 @@ class EorzeaTime < Sinatra::Base
         end
       end
     end
-
-    Sprockets::Helpers.configure do |config|
-      config.environment = sprockets
-      config.prefix = assets_prefix
-      config.digest = digest_assets
-      config.public_path = public_folder
-      config.debug = development?
-    end
+  end
+  configure_sprockets_helpers do
   end
 
   configure :production do
@@ -44,8 +42,6 @@ class EorzeaTime < Sinatra::Base
   end
 
   helpers do
-    include Sprockets::Helpers
-
     def locale
       session[:locale] || 'en'
     end
