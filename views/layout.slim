@@ -17,9 +17,9 @@ html lang="#{locale}"
             a.navbar-brand href="/" Eorzea Time
           .navbar-collapse.collapse
             ul.nav.navbar-nav
-              li class="#{'active' if @location == 'eorzea'}"
+              li class="#{'active' if @location == :eorzea}"
                 a href="/eorzea-clock" Eorzea
-              li class="#{'active' if @location == 'earth'}"
+              li class="#{'active' if @location == :earth}"
                 a href="/earth-clock" Earth
             ul.nav.navbar-nav.navbar-right
               li class="#{'active' if request.path_info == '/about'}"
