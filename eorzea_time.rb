@@ -24,8 +24,6 @@ class EorzeaTime < Sinatra::Base
         end
       end
     end
-    sprockets.js_compressor = :uglify
-    sprockets.css_compressor = :scss
 
     Sprockets::Helpers.configure do |config|
       config.environment = sprockets
@@ -34,6 +32,11 @@ class EorzeaTime < Sinatra::Base
       config.public_path = public_folder
       config.debug = development?
     end
+  end
+
+  configure :production do
+    sprockets.js_compressor = :uglify
+    sprockets.css_compressor = :scss
   end
 
   configure :development do
