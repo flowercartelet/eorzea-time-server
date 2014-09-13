@@ -1,7 +1,8 @@
 require 'bundler'
 Bundler.require
 
-require File.expand_path('../eorzea_time', __FILE__)
+$:.unshift File.expand_path('../lib', __FILE__)
+require 'eorzea_time'
 
 map '/assets' do
   run EorzeaTime.sprockets

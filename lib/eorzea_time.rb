@@ -2,6 +2,7 @@ require 'json'
 
 class EorzeaTime < Sinatra::Base
   register Sinatra::Sprockets::Helpers
+  set :root, File.expand_path('..', root)
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, production?
