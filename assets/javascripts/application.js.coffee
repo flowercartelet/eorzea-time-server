@@ -1,5 +1,6 @@
 #= require jquery
 #= require bootstrap
+#= require request_animation_frame
 #= require eorzea_time
 
 (($)->
